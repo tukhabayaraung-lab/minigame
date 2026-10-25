@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1020">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="mingame2.css">
+    <script src="minigame2.js" defer></script>
+</head>
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main class="game-shell">
+        <header class="page-header">
+            <p class="eyebrow">THE CLASSIC, REIMAGINED</p>
+            <h1>Tic <span>Tac</span> Toe</h1>
+            <p class="subtitle">Three in a row. Make your move.</p>
+        </header>
+
+        <section class="scoreboard" aria-label="Match score">
+            <div class="player-card player-x active" id="cardX">
+                <div class="player-badge"><span class="symbol-icon">X</span></div>
+                <div class="player-info">
+                    <span class="player-name" id="nameX">Player X</span>
+                    <span class="player-score" id="scoreX">0</span>
+                </div>
+                <span class="turn-indicator">YOUR TURN</span>
+            </div>
+            <div class="tie-card" aria-label="Draws">
+                <span class="tie-label">DRAWS</span>
+                <span class="tie-score" id="scoreTie">0</span>
+            </div>
+            <div class="player-card player-o" id="cardO">
+                <span class="turn-indicator">YOUR TURN</span>
+                <div class="player-info">
+                    <span class="player-name" id="nameO">Player O</span>
+                    <span class="player-score" id="scoreO">0</span>
+                </div>
+                <div class="player-badge"><span class="symbol-icon">O</span></div>
+            </div>
+        </section>
+
+        <section class="game-panel" aria-label="Tic Tac Toe game">
+            <div class="game-status" id="gameStatus" role="status" aria-live="polite">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span id="statusText">Player X's turn</span>
+            </div>
+            <div class="game-board" id="gameBoard" role="grid" aria-label="Tic Tac Toe board">
+                <button class="cell" type="button" role="gridcell" data-cell="0" aria-label="Row 1, column 1"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="1" aria-label="Row 1, column 2"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="2" aria-label="Row 1, column 3"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="3" aria-label="Row 2, column 1"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="4" aria-label="Row 2, column 2"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="5" aria-label="Row 2, column 3"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="6" aria-label="Row 3, column 1"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="7" aria-label="Row 3, column 2"></button>
+                <button class="cell" type="button" role="gridcell" data-cell="8" aria-label="Row 3, column 3"></button>
+            </div>
+            <div class="game-actions">
+                <button class="button button-secondary" id="soundToggle" type="button" aria-pressed="true">
+                    <span id="soundIcon" aria-hidden="true">♫</span> Sound on
+                </button>
+                <button class="button button-primary" id="newRound" type="button">New round <span aria-hidden="true">↻</span></button>
+            </div>
+        </section>
+        <footer>Two players · One board · Endless rematches</footer>
+    </main>
+</body>
+</html>
